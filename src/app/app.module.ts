@@ -12,6 +12,8 @@ import {appRouting} from "./app.routing";
 import { UserFormComponent } from './users/user-form/user-form.component';
 import {PreventUnsavedChangedGuardService} from "./shared/prevent-unsaved-changed-guard.service";
 import { UserNotFoundComponent } from './users/user-not-found/user-not-found.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UserNotFoundComponent } from './users/user-not-found/user-not-found.com
     PostsComponent,
     UsersComponent,
     UserFormComponent,
-    UserNotFoundComponent
+    UserNotFoundComponent,
+    LoaderComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,

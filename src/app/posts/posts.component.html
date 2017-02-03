@@ -1,1 +1,21 @@
 <h1>Posts</h1>
+<app-loader [visible]="isLoading"></app-loader>
+<div *ngIf="!isLoading"
+     class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group">
+                <li *ngFor="let post of listPost"
+                    (click)="selectPost(post)"
+                    [ngClass]="{active: selectedPost == post}"
+                    class="list-group-item">
+                    {{ post.title }}
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <app-post-detail [post]="selectedPost"></app-post-detail>
+        </div>
+    </div>
+
+</div>
