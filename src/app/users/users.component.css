@@ -1,0 +1,11 @@
+.center {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.loading {
+    display: none;
+}
