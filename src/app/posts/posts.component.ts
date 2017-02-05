@@ -10,18 +10,26 @@ import {PostService} from "./post.service";
 })
 export class PostsComponent implements OnInit {
 
-    listPost: Post[];
+    private _listPost: Post[];
+    listFilteredPost: Post[];
     isLoading: boolean = true;
-    selectedPost : Post;
+    selectedPost: Post;
+
+    nbPerPage: number = 5;
+    currentPage: number;
 
     constructor(private _postService: PostService) {
     }
 
     ngOnInit() {
+        this.currentPage = 1;
 
         this._postService.getPosts()
             .subscribe(
-                posts => this.listPost = posts,
+                posts => {
+                    this._listPost = posts;
+                    this.listFilteredPost = posts;
+                },
                 error => {
                     console.error(error);
                     this.isLoading = false;
@@ -32,8 +40,16 @@ export class PostsComponent implements OnInit {
                 })
     }
 
-    selectPost(post : Post) {
+    selectPost(post: Post) {
         this.selectedPost = post;
+    }
+
+    filterPostsByUser($event) {
+
+        if ($event['newUserId'].length > 0)
+            this.listFilteredPost = this._listPost.filter(post => post.userId == +$event['newUserId']);
+        else
+            this.listFilteredPost = this._listPost;
     }
 }
 

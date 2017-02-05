@@ -12,8 +12,12 @@ import {appRouting} from "./app.routing";
 import { UserFormComponent } from './users/user-form/user-form.component';
 import {PreventUnsavedChangedGuardService} from "./shared/prevent-unsaved-changed-guard.service";
 import { UserNotFoundComponent } from './users/user-not-found/user-not-found.component';
-import { LoaderComponent } from './shared/loader/loader.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { PostCommentsComponent } from './posts/post-comments/post-comments.component';
+import { DropdownListComponent } from './users/dropdown-list/dropdown-list.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { LimitToPipe } from './shared/limit-to.pipe';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,12 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
     UsersComponent,
     UserFormComponent,
     UserNotFoundComponent,
+    PostDetailComponent,
     LoaderComponent,
-    PostDetailComponent
+    PostCommentsComponent,
+    DropdownListComponent,
+    PaginationComponent,
+    LimitToPipe
   ],
   imports: [
     BrowserModule,

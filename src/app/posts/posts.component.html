@@ -4,8 +4,12 @@
      class="container">
     <div class="row">
         <div class="col">
+            <app-pagination [totalItems]="listFilteredPost.length" [nbPerPage]="nbPerPage"></app-pagination>
+            <app-users-dropdown-list
+                    (userChange)="filterPostsByUser($event)">
+            </app-users-dropdown-list>
             <ul class="list-group">
-                <li *ngFor="let post of listPost"
+                <li *ngFor="let post of listFilteredPost | limitTo: nbPerPage: currentPage"
                     (click)="selectPost(post)"
                     [ngClass]="{active: selectedPost == post}"
                     class="list-group-item">
