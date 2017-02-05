@@ -1,0 +1,9 @@
+<div *ngIf="post"
+     class="card">
+    <img class="card-img-top" [src]="'http://www.lorempixel.com/600/300?' + post?.id" alt="Card image cap">
+    <div class="card-block">
+        <h4 class="card-title">{{ post?.title }}</h4>
+        <p class="card-text">{{ post?.body }}</p>
+    </div>
+    <app-post-comments [postId]="post?.id"></app-post-comments>
+</div>

@@ -1,0 +1,10 @@
+.media img {
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+    padding: 15px;
+}
+.media-body {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}

@@ -1,0 +1,12 @@
+<hr>
+<app-loader [visible]="isLoading"></app-loader>
+<div *ngIf="!isLoading">
+    <div *ngFor="let comment of listComments"
+         class="media">
+        <img class="d-flex mr-3" [src]="'http://www.lorempixel.com/80/80/people?random=' + comment.id" alt="{{ comment.name }}">
+        <div class="media-body">
+            <h5 class="mt-0">{{ comment.name }}</h5>
+            {{ comment.body }}
+        </div>
+    </div>
+</div>
