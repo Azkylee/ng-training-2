@@ -9,7 +9,7 @@
                     (userChange)="filterPostsByUser($event)">
             </app-users-dropdown-list>
             <ul class="list-group">
-                <li *ngFor="let post of listFilteredPost | limitTo: nbPerPage: currentPage"
+                <li *ngFor="let post of listFilteredPost | limitTo: (currentPage * nbPerPage): nbPerPage"
                     (click)="selectPost(post)"
                     [ngClass]="{active: selectedPost == post}"
                     class="list-group-item">
