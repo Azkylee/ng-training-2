@@ -41,6 +41,7 @@ export class DropdownListComponent implements OnInit {
 
     changeUser() {
         this.selectedUser = this.form.controls['user'];
+        console.info(this.selectedUser);
 
         if(this.selectedUser)
             this.userChange.emit({newUserId: this.selectedUser.value})

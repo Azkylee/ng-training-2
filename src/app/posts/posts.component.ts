@@ -45,11 +45,17 @@ export class PostsComponent implements OnInit {
     }
 
     filterPostsByUser($event) {
+        this.currentPage = 0;
+        this.selectedPost = null;
 
         if ($event['newUserId'].length > 0)
             this.listFilteredPost = this._listPost.filter(post => post.userId == +$event['newUserId']);
         else
             this.listFilteredPost = this._listPost;
+    }
+
+    currentPageChange($event) {
+        this.currentPage = $event.newPageNumber;
     }
 }
 

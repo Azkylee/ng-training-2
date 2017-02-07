@@ -4,7 +4,11 @@
      class="container">
     <div class="row">
         <div class="col">
-            <app-pagination [totalItems]="listFilteredPost.length" [nbPerPage]="nbPerPage"></app-pagination>
+            <app-pagination
+                    (pageChange)="currentPageChange($event)"
+                    [totalItems]="listFilteredPost.length"
+                    [nbPerPage]="nbPerPage">
+            </app-pagination>
             <app-users-dropdown-list
                     (userChange)="filterPostsByUser($event)">
             </app-users-dropdown-list>
