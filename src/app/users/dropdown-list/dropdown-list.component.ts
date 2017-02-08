@@ -1,7 +1,7 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {User} from "../user";
 import {UserService} from "../user.service";
-import {FormGroup, FormBuilder} from "@angular/forms";
+import {FormGroup, FormBuilder, FormControl} from "@angular/forms";
 
 @Component({
     selector: 'app-users-dropdown-list',
@@ -37,11 +37,12 @@ export class DropdownListComponent implements OnInit {
                     this.isLoading = false;
                 }
             );
+
+        console.log(this.selectedUser);
     }
 
     changeUser() {
         this.selectedUser = this.form.controls['user'];
-        console.info(this.selectedUser);
 
         if(this.selectedUser)
             this.userChange.emit({newUserId: this.selectedUser.value})

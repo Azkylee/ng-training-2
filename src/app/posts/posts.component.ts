@@ -15,7 +15,7 @@ export class PostsComponent implements OnInit {
     isLoading: boolean = true;
     selectedPost: Post;
 
-    nbPerPage: number = 5;
+    nbPerPage: number = 10;
     currentPage: number;
 
     constructor(private _postService: PostService) {

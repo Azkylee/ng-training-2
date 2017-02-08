@@ -2,7 +2,6 @@
 <form [formGroup]="form">
     <select *ngIf="!isLoading"
             formControlName="user"
-            [(ngModel)]="selectedUser"
             (change)="changeUser()"
             class="custom-select">
         <option selected value="">Select an user</option>
